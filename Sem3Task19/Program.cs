@@ -13,18 +13,18 @@ public class Answer
 {
     static bool IsPalindrome(int number){
       // Введите свое решение ниже
-        string numb = number.ToString();
-        if (numb.Length != 5)
+        string numb = number.ToString();    //Конвертируем число в строку
+        if (numb.Length != 5)               //Проверяем длину - должро быть 5
         {
-            Console.WriteLine("Число не пятизначное");
-            return false;
+            Console.WriteLine("Число не пятизначное");  //Если не 5 - выдаем сообщение 
+            return false;                               //Возвращаем false
         }
         else
         {
-            if (numb[0] == numb[4] && numb[1] == numb[3])
-                return true;
+            if (numb[0] == numb[4] && numb[1] == numb[3])   //Если количество знаков =5 - то сверяем 1-ый с 5-ым и 2-ой с 4-ым знаками
+                return true;                                //Если условие выполняется - возвращаем true
             else
-                return false;
+            return false;                                   //Если не выполняется - false
         }
     }
   
