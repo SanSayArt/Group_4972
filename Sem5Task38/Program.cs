@@ -7,33 +7,33 @@
 // -------------------------------------------------------------------------------------------------------------------------------
 
 
-void FillMass(int[] arr, int lowBorder, int maxBorder)
+void FillMass(double[] arr, int lowBorder, int maxBorder)
 {
     Random rnd = new Random();
     for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = rnd.Next(lowBorder, maxBorder + 1);
+        arr[i] = rnd.Next(lowBorder, maxBorder + 1) + Math.Round(rnd.NextDouble(),2);
     }
 }
 // Метод вывода массива на экран
-string BildStringArr(int[] arr)
+string BildStringArr(double[] arr)
 {
     string res = string.Empty;
     res = res + "[";
     for (int i = 0; i < arr.Length - 1; i++)
     {
-        res = res + arr[i] + ", ";
+        res = res + arr[i] + "; ";
     }
     res = res + arr[arr.Length - 1] + "]";
     return res;
 }
 
 // Метод подсчета чисел в массиве
-int GetDelta(int[] arr)
+double GetDelta(double[] arr)
 {
-    int res = 0;
-    int max = arr[0];
-    int min = arr[0];
+    double res = 0;
+    double max = arr[0];
+    double min = arr[0];
     for (int i = 1; i < arr.Length; i++)
     {
         if (max < arr[i]) max = arr[i];
@@ -48,7 +48,7 @@ void PrintResult(string msg)
     Console.WriteLine(msg);
 }
 
-int[] array = new int[8];       // Объявляем массив с определенной длиной
+double[] array = new double[8];       // Объявляем массив с определенной длиной
 FillMass(array, 1, 100);        // Заполняем массов
-int delta = GetDelta(array);       // Объявляем переменную для суммы и вычисляем её
+double delta = GetDelta(array);       // Объявляем переменную для суммы и вычисляем её
 PrintResult(BildStringArr(array) + " -> " + delta);// Вывод результата на экран

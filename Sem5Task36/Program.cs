@@ -43,8 +43,23 @@ void PrintResult(string msg)
 {
     Console.WriteLine(msg);
 }
+//Метод  нахождения пары в массиве и вывода на экран
+void FindDubl(int[] arr)
+{
+    int numb = 0;
+    for (int x = 0; x < arr.Length; x++)
+    {
+        numb = arr[x];
+        for (int y = x + 1; y < arr.Length; y++)
+        {
+            if (numb == arr[y])
+                PrintResult($"Найдены пара чисел {numb} и {arr[y]}");
+        }
+    }
+}
 
-int[] array = new int[8];       // Объявляем массив с определенной длиной
+int[] array = new int[15];       // Объявляем массив с определенной длиной
 FillMass(array, 1, 100);        // Заполняем массов
 int sum = GetSumm(array);       // Объявляем переменную для суммы и вычисляем её
 PrintResult(BildStringArr(array) + " -> " + sum);// Вывод результата на экран
+FindDubl(array);                // Запускаем поиск пар чисел
