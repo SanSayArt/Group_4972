@@ -15,14 +15,16 @@ void FillMass(int[] arr, int lowBorder, int maxBorder)
     }
 }
 // Метод вывода массива на экран
-void PrintArr(int[] arr)
+string BildStringArr(int[] arr)
 {
-    Console.Write("[");
+    string res = string.Empty;
+    res = res + "[";
     for (int i = 0; i < arr.Length - 1; i++)
     {
-        Console.Write(arr[i] + ", ");
+        res = res + arr[i] + ", ";
     }
-    Console.Write(arr[arr.Length - 1] + "]");
+    res = res + arr[arr.Length - 1] + "]";
+    return res;
 }
 
 // Метод подсчета четных чисел в массиве
@@ -36,14 +38,31 @@ int GetCount(int[] arr)
     }
     return res;
 }
-// Метод 
+// Метод вывода сообщения на экран
 void PrintResult(string msg)
 {
     Console.WriteLine(msg);
 }
 
-int[] array = new int[8];
-FillMass(array, 100, 999);
-int count = GetCount(array);
-PrintArr(array);
-PrintResult(" -> " + count);
+// Сортировка методом пузырька
+void BubbleSort(int[] arr)
+{
+    int n = arr.Length;
+    for (int i = 0; i < n - 1; i++)
+        for (int j = 0; j < n - i - 1; j++)
+            if (arr[j] > arr[j + 1])
+            {
+                // Меняем местами элементы
+                int tmp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp;
+            }
+}
+
+
+int[] array = new int[8];   // Объявляем массив с определенной длиной
+FillMass(array, 1, 100);    // Заполняем массов
+int count = GetCount(array);// Объявляем переменную для подсчета и вычисляем её 
+PrintResult(BildStringArr(array) + " -> " + count);// Вывод результата на экран
+BubbleSort(array);          // Запускаем сортировку
+PrintResult(BildStringArr(array) + " -> " + count);// Вывод отсортированного результата на экран
