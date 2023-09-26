@@ -64,8 +64,9 @@ void PrintRes(string msg)
 } 
 
 int numA = ReadNumber("Введите число А: "); 
-int numB = ReadNumber("Введите число B: ");
 string oper = ReadOperand("Введите символ действия (+,-,/,*,^): ");
+int numB = ReadNumber("Введите число B: ");
+
 // Проверяем введенный символ вычисления и выполняем действие
 switch (oper)
 {
