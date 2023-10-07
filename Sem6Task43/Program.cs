@@ -29,4 +29,4 @@ int k1 = ReadData("Введите значение k1: ");
 int b2 = ReadData("Введите значение b2: ");
 int k2 = ReadData("Введите значение k2: ");
 (double x, double y) point = CrossPoint(b1,k1,b2,k2);
-PrintResult(point.x + "; " + point.x);
+PrintResult(point.x + "; " + point.y);
